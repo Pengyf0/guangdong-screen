@@ -8,20 +8,27 @@ import IntegralView from '../views/IntegralView.vue'
 Vue.use(VueRouter)
 
 const routes = [{
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/OperateView',
-    name: 'OperateView',
-    component: OperateView
-  },
-  {
-    path: '/IntegralView',
-    name: 'IntegralView',
-    component: IntegralView
-  }
+  path: '/',
+  redirect: "/mainIndex",
+  // name: 'home',
+  // component: HomeView,
+
+},
+{
+  path: '/OperateView',
+  name: 'OperateView',
+  component: OperateView
+},
+{
+  path: '/IntegralView',
+  name: 'IntegralView',
+  component: IntegralView
+},
+{
+  path: '/mainIndex',
+  name: 'mainIndex',
+  component: () => import('../views/mainIndex.vue'),
+}
 ]
 
 const router = new VueRouter({

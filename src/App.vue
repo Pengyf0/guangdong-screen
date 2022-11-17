@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+	<div id="app">
+		<router-view />
+	</div>
 </template>
 
 <style lang="less" >
@@ -33,22 +33,18 @@ blockquote,
 table,
 th,
 td {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+	padding: 0;
+	margin: 0;
+	list-style: none;
 }
 #app {
-  width: 100vw;
-  height: 100vh;
-  background-color: #020308;
-  overflow: hidden;
-  font-family: "Microsoft YaHei";
-
+	width: 100vw;
+	height: 100vh;
+	// background-color: #020308;
+	overflow: hidden;
+	font-family: "Microsoft YaHei";
 }
-
 </style>
 
 <script>
-
-
 </script>
