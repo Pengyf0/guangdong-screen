@@ -38,10 +38,9 @@ td {
 	list-style: none;
 }
 #app {
-	width: 100vw;
-	height: 100vh;
+	// width: 100vw;
+	// height: 100vh;
 	// background-color: #020308;
-	overflow: hidden;
 	font-family: "Microsoft YaHei";
 }
 </style>

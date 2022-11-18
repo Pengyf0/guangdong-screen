@@ -15,7 +15,9 @@
 				<div class="midMap"></div>
 			</div>
 			<div class="mid3">
-				<div class="contTop"></div>
+				<div class="contTop">
+					<my-line :lineObj="lineData"></my-line>
+				</div>
 				<div class="rightTable"></div>
 			</div>
 		</section>
@@ -23,56 +25,71 @@
 </template>
 
 <script>
+import myLine from "./echartsType/line.vue";
 export default {
+	components: {
+		myLine,
+	},
 	data() {
-		return {};
+		return {
+			lineData: {
+				id: "line3",
+				xAxisData: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+				seriesData: [150, 230, 224, 218, 135, 147, 260],
+			},
+		};
 	},
 };
 </script>
 <style lang="less" scoped>
 .midContent {
-	height: 450px;
+	height: 650px;
+	padding: 10px 0;
 	text-align: center;
 	display: flex;
 	box-sizing: border-box;
 	.mid1 {
-		flex: 1;
+		width: 560px;
 		.contTop {
-			height: 200px;
+			height: 310px;
 			border: 1px solid black;
+			padding: 20px 50px;
 			display: flex;
 			flex-flow: wrap;
-			justify-content: space-betw;
+			justify-content: space-between;
+			box-sizing: border-box;
 			div {
-				width: 49%;
-				height: 100px;
+				width: 200px;
+				height: 120px;
 				border: 1px solid black;
 			}
 		}
 		.leftBar {
-			height: 250px;
+			height: 310px;
+			margin-top: 10px;
 			border: 1px solid black;
 		}
 	}
 	.mid2 {
 		flex: 1;
 		.contTop {
-			height: 140px;
+			height: 240px;
 			border: 1px solid black;
 		}
 		.midMap {
-			height: 310px;
+			height: 390px;
 			border: 1px solid black;
 		}
 	}
 	.mid3 {
-		flex: 1;
+		width: 560px;
 		.contTop {
-			height: 170px;
+			height: 240px;
 			border: 1px solid black;
 		}
 		.rightTable {
-			height: 280px;
+			height: 380px;
+			margin-top: 10px;
 			border: 1px solid black;
 		}
 	}

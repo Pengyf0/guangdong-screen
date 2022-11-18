@@ -9,12 +9,14 @@
 import headerVue from "@/components/guangdong/header.vue";
 import Content from "@/components/guangdong/midContent.vue";
 import Bottom from "@/components/guangdong/bottom.vue";
+import drawMixin from "../utils/drawMixin";
 export default {
 	components: {
 		headerVue,
 		Content,
 		Bottom,
 	},
+	mixins: [drawMixin],
 	data() {
 		return {};
 	},
@@ -23,6 +25,7 @@ export default {
 
 <style lang="less" scoped>
 .mainIndex {
-	padding: 20px;
+	padding: 10px 30px;
+	// 	background-color: #222222;
 }
 </style>

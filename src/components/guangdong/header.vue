@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<header>广东首页大屏</header>
+		<header>生态场景APP运营驾驶舱</header>
 	</div>
 </template>
 
@@ -13,7 +13,10 @@ export default {
 </script>
 <style lang="less" scoped>
 header {
-	height: 50px;
+	height: 93px;
+	line-height: 93px;
+	font-size: 40px;
+	color: #ffdac0;
 	text-align: center;
 }
 </style>
