@@ -1,6 +1,6 @@
 
 <template>
-	<div :id="lineObj?.id" style="width: 100%; height: 100%"></div>
+	<div :id="lineObj?.id" style="width: 100%; height: calc(100% - 36px)"></div>
 </template>
 
 <script>
@@ -30,24 +30,70 @@ export default {
 				document.getElementById(this.lineObj?.id)
 			);
 			let option = {
+				grid: {
+					top: "10%",
+					bottom: "5%",
+					containLabel: true,
+				},
 				xAxis: {
 					type: "category",
 					data: this.lineObj?.xAxisData,
+					axisLine: {
+						lineStyle: {
+							color: "#B3B4CD",
+							opacity: 0.3,
+						},
+					},
+					axisTick: {
+						show: false,
+					},
+					axisLabel: {
+						color: "#C0C0BF",
+						interval: 0,
+						rotate: 38,
+					},
 				},
 				yAxis: {
 					type: "value",
+					scale: true, //y轴不从0开始
+					splitLine: {
+						lineStyle: {
+							color: "#B3B4CD",
+							opacity: 0.3,
+						},
+					},
+					axisLabel: {
+						color: "#C0C0BF",
+					},
 				},
 				series: [
 					{
 						data: this.lineObj?.seriesData,
 						type: "line",
+						lineStyle: {
+							color: "#F7BC27",
+							width: 1,
+						},
+						showSymbol: true, //是否默认展示圆点
+						symbol: "circle", //设定为实心点
+						symbolSize: 8, //设定实心点的大小
+						itemStyle: {
+							normal: {
+								color: "#F7BC27",
+							},
+						},
+						label: {
+							show: true,
+							position: "top",
+							color: "#F7BC27",
+						},
 					},
 				],
 			};
 			myChart.setOption(option);
-			// window.addEventListener("resize", function () {
-			// 	myChart.resize();
-			// });
+			window.addEventListener("resize", function () {
+				myChart.resize();
+			});
 		},
 	},
 };

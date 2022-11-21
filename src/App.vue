@@ -38,9 +38,9 @@ td {
 	list-style: none;
 }
 #app {
-	width: 100vw;
-	height: 100vh;
-	position: relative;
+	// width: 100vw;
+	// height: 100vh;
+	// position: relative;
 	// background-color: #020308;
 	font-family: "Microsoft YaHei";
 }
