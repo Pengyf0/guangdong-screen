@@ -44,7 +44,7 @@ export default {
 	padding: 10px 0;
 	display: flex;
 	li {
-		height: 295;
+		height: 295px;
 		width: 365px;
 		border: 1px solid black;
 	}
