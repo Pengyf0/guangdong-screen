@@ -26,6 +26,7 @@ export default {
 <style lang="less" scoped>
 .mainIndex {
 	padding: 10px 30px;
-	// 	background-color: #222222;
+	background-color: #000;
+	color: #fff;
 }
 </style>
