@@ -1,8 +1,10 @@
 <template >
-	<div class="mainIndex" ref="appGD">
-		<headerVue />
-		<Content />
-		<Bottom />
+	<div class="layout1">
+		<div class="mainIndex" ref="appGD">
+			<headerVue />
+			<Content />
+			<Bottom />
+		</div>
 	</div>
 </template>
 <script>
@@ -24,6 +26,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.layout1 {
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+	background-color: #000;
+	color: #fff;
+}
 .mainIndex {
 	padding: 10px 30px;
 	background-color: #000;
