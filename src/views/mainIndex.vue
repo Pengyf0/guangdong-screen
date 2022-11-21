@@ -36,6 +36,8 @@ export default {
 }
 .mainIndex {
 	padding: 10px 30px;
+	background-color: #000;
+	color: #fff;
 	width: 1920px;
 	height: 1080px;
 	position: absolute;
@@ -45,6 +47,5 @@ export default {
 	transform-origin: left top;
 	overflow: hidden;
 	box-sizing: border-box;
-	// 	background-color: #222222;
 }
 </style>

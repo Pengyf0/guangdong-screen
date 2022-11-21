@@ -41,12 +41,17 @@
 
 <script>
 import myLine from "./echartsType/line.vue";
+import myTitle from "./title/Title.vue";
 export default {
 	components: {
 		myLine,
+		myTitle,
 	},
 	data() {
 		return {
+			img1: require("@/assets/image/bao.png"),
+			img2: require("@/assets/image/add.png"),
+			text: ["近5天生活卡新增", "近5天新增注册"],
 			lineData: {
 				id: "line",
 				xAxisData: [
@@ -205,6 +210,7 @@ export default {
 	border: 1px solid #fff;
 	padding: 10px 0;
 	display: flex;
+
 	li {
 		height: 295px;
 		width: 365px;
@@ -249,6 +255,7 @@ export default {
 			}
 		}
 	}
+
 	li + li {
 		margin-left: 10px;
 	}
