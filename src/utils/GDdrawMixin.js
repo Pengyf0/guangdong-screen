@@ -8,7 +8,7 @@ const scale = {
 
 // * 设计稿尺寸（px）
 // 1980×1080
-const baseWidth = 1980
+const baseWidth = 1920
 const baseHeight = 1080
 
 
@@ -35,21 +35,16 @@ export default {
       if (!appRef) return
       // 当前宽高比
       const currentRate = parseFloat((window.innerWidth / window.innerHeight).toFixed(5))
-      console.log(currentRate)
       if (appRef) {
         if (currentRate > baseProportion) {
           // 表示更宽
-          console.log(111)
           scale.width = ((window.innerHeight * baseProportion) / baseWidth).toFixed(5)
           scale.height = (window.innerHeight / baseHeight).toFixed(5)
-          // appRef.style.transform = `scale(${scale.width}, ${scale.height}) translate(${(window.innerWidth - 1920) / 2}px)`
-          appRef.style.transform = `scale(${scale.width}, ${scale.height}) translateX(-50%,-50%)`
+          appRef.style.transform = `scale(${scale.width}, ${scale.height}) translate(-50%, -50%)`
         } else {
           // 表示更高
-          console.log(222)
           scale.height = ((window.innerWidth / baseProportion) / baseHeight).toFixed(5)
           scale.width = (window.innerWidth / baseWidth).toFixed(5)
-          console.log(window.innerHeight, 1920)
           appRef.style.transform = `scale(${scale.width}, ${scale.height}) translate(-50%, -50%)`
         }
       }
