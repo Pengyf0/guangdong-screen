@@ -8,6 +8,7 @@
 					<i class="icon1"></i>
 					全国六地区最新日活
 				</div>
+				<myYaioxBar :barObj="dayBarData"></myYaioxBar>
 			</li>
 			<li>
 				<div class="title">
@@ -15,6 +16,7 @@
 					<i class="icon2"></i>
 					惠省钱（建行生活入口）数据
 				</div>
+				<myXaioxBar :barObj="moneyBarData"></myXaioxBar>
 			</li>
 			<li>
 				<div class="title">
@@ -46,11 +48,13 @@
 
 <script>
 import myLine from "./echartsType/line.vue";
-import myTitle from "./title/Title.vue";
+import myTitle from './title/Title.vue';
+import myYaioxBar from './echartsType/YaioxBar.vue'
 export default {
 	components: {
 		myLine,
 		myTitle,
+		myYaioxBar,
 	},
 	data() {
 		return {
@@ -89,6 +93,20 @@ export default {
 					"2022/11/16",
 				],
 				seriesData: [137, 160, 440, 78, 123],
+			},
+			// 全国六地区最新日活
+			dayBarData: {
+				id: "bar2",
+				yAxisData: ["北京", "天津", "上海", "广州", "成都", "深圳"],
+				seriesData: [10020, 5000, 4448, 3218, 2147, 1835],//倒序
+				color: ['#FADE4D', '#F7BC27', '#F7BD27']
+			},
+			// 惠省钱（建行生活入口）数据
+			moneyBarData: {
+				id: "bar3",
+				xAxisData: ["0点", "3点", "6点", "12点", "15点", "24点"],
+				seriesData: [135, 147, 218, 448, 500, 104],
+				color: '#FF6600'
 			},
 		};
 	},
@@ -220,44 +238,50 @@ export default {
 		height: 295px;
 		width: 365px;
 		background: rgba(34, 34, 34, 0.5);
+
 		.title {
 			height: 36px;
 			font-size: 18px;
 			white-space: nowrap;
-			background: linear-gradient(
-				90deg,
-				rgba(255, 159, 0, 0.63) 0%,
-				rgba(255, 102, 0, 0) 100%
-			);
+			background: linear-gradient(90deg,
+					rgba(255, 159, 0, 0.63) 0%,
+					rgba(255, 102, 0, 0) 100%);
 			width: 267px;
 			display: flex;
 			align-items: center;
+
 			span {
 				height: 22px;
 				border-left: 2px solid #fff;
 			}
+
 			i {
 				height: 24px;
 				width: 24px;
 				display: inline-block;
 				margin: 0 8px;
 			}
+
 			.icon1 {
 				background: url(@/assets/image/user.png) no-repeat;
 				background-size: 100% 100%;
 			}
+
 			.icon2 {
 				background: url(../../assets/image/me.png) no-repeat;
 				background-size: 100% 100%;
 			}
+
 			.icon3 {
 				background: url(@/assets/image/user.png) no-repeat;
 				background-size: 100% 100%;
 			}
+
 			.icon4 {
 				background: url(@/assets/image/bao.png) no-repeat;
 				background-size: 100% 100%;
 			}
+
 			.icon5 {
 				background: url(@/assets/image/add.png) no-repeat;
 				background-size: 100% 100%;
@@ -265,7 +289,7 @@ export default {
 		}
 	}
 
-	li + li {
+	li+li {
 		margin-left: 10px;
 	}
 }

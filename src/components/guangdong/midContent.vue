@@ -8,7 +8,10 @@
 					<div>aum20w以上</div>
 					<div>aum50W以上</div>
 				</div>
-				<div class="leftBar"></div>
+				<div class="leftBar">
+					<myTitle :text="text[1]" :img='img2' />
+					<myYaioxBar :barObj="regBarData"></myYaioxBar>
+				</div>
 			</div>
 			<div class="mid2">
 				<div class="contTop"></div>
@@ -29,17 +32,20 @@
 
 <script>
 import myLine from "./echartsType/line.vue";
-import myTitle from "./title/Title.vue";
+import myTitle from "./title/Title.vue"
+import myYaioxBar from './echartsType/YaioxBar.vue'
 import myTable from "./table/scrollTbale.vue";
 export default {
 	components: {
 		myLine,
 		myTitle,
 		myTable,
+		myYaioxBar
 	},
 	data() {
 		return {
-			img1: require("@/assets/image/user.png"),
+			img1: require('@/assets/image/user.png'),
+			img2: require('@/assets/image/add.png'),
 			text: [
 				"近12天日活跃用户",
 				"全国六地区注册累计榜",
@@ -65,6 +71,14 @@ export default {
 					132261, 120525, 119876,
 				],
 			},
+			// 全国六区累计注册
+			regBarData: {
+				id: "bar1",
+				yAxisData: ["广州", "北京", "上海", "天津", "重庆", "深圳"],
+				seriesData: [1000, 500, 448, 218, 147, 135,],
+				color: ['#FF9F00', '#FF6200', '#FF6600']
+			},
+
 		};
 	},
 };
