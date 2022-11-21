@@ -52,7 +52,7 @@ export default {
 	display: flex;
 
 	li {
-		height: 295;
+		height: 295px;
 		width: 365px;
 		border: 1px solid #fff;
 	}

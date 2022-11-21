@@ -82,7 +82,7 @@ export default {
 	}
 
 	.mid2 {
-		flex: 1;
+		width: 740px;
 
 		.contTop {
 			height: 240px;

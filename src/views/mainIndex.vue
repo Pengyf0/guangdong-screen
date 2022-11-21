@@ -1,5 +1,5 @@
 <template >
-	<div class="mainIndex">
+	<div class="mainIndex" ref="appGD">
 		<headerVue />
 		<Content />
 		<Bottom />
@@ -9,7 +9,7 @@
 import headerVue from "@/components/guangdong/header.vue";
 import Content from "@/components/guangdong/midContent.vue";
 import Bottom from "@/components/guangdong/bottom.vue";
-import drawMixin from "../utils/drawMixin";
+import drawMixin from "../utils/GDdrawMixin";
 export default {
 	components: {
 		headerVue,
@@ -28,5 +28,14 @@ export default {
 	padding: 10px 30px;
 	background-color: #000;
 	color: #fff;
+	width: 1920px;
+	height: 1080px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transform-origin: left top;
+	overflow: hidden;
+	box-sizing: border-box;
 }
 </style>
