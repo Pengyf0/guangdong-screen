@@ -2,8 +2,12 @@
 <template>
 	<div>
 		<ul class="bottom">
-			<li></li>
-			<li></li>
+			<li>
+				<myYaioxBar :barObj="dayBarData"></myYaioxBar>
+			</li>
+			<li>
+				<myXaioxBar :barObj="moneyBarData"></myXaioxBar>
+			</li>
 			<li></li>
 			<li>
 				<myTitle :text="text[0]" :img='img1' />
@@ -19,11 +23,15 @@
 
 <script>
 import myLine from "./echartsType/line.vue";
-import myTitle from './title/Title.vue'
+import myTitle from './title/Title.vue';
+import myYaioxBar from './echartsType/YaioxBar.vue'
+import myXaioxBar from './echartsType/XaioxBar.vue'
 export default {
 	components: {
 		myLine,
-		myTitle
+		myTitle,
+		myYaioxBar,
+		myXaioxBar
 	},
 	data() {
 		return {
@@ -39,6 +47,20 @@ export default {
 				id: "line2",
 				xAxisData: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
 				seriesData: [180, 200, 220, 240, 260, 280, 300],
+			},
+			// 全国六地区最新日活
+			dayBarData: {
+				id: "bar2",
+				yAxisData: ["北京", "天津", "上海", "广州", "成都", "深圳"],
+				seriesData: [10020, 5000, 4448, 3218, 2147, 1835],//倒序
+				color: ['#FADE4D', '#F7BC27', '#F7BD27']
+			},
+			// 惠省钱（建行生活入口）数据
+			moneyBarData: {
+				id: "bar3",
+				xAxisData: ["0点", "3点", "6点", "12点", "15点", "24点"],
+				seriesData: [135, 147, 218, 448, 500, 104],
+				color: '#FF6600'
 			},
 		};
 	},
