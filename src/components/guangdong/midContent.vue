@@ -16,10 +16,12 @@
 			</div>
 			<div class="mid3">
 				<div class="contTop">
-					<myTitle :text="text[2]" :img='img1' />
+					<myTitle :text="text[2]" :img="img1" />
 					<my-line :lineObj="lineData"></my-line>
 				</div>
-				<div class="rightTable"></div>
+				<div class="rightTable">
+					<myTable></myTable>
+				</div>
 			</div>
 		</section>
 	</div>
@@ -27,16 +29,22 @@
 
 <script>
 import myLine from "./echartsType/line.vue";
-import myTitle from "./title/Title.vue"
+import myTitle from "./title/Title.vue";
+import myTable from "./table/scrollTbale.vue";
 export default {
 	components: {
 		myLine,
-		myTitle
+		myTitle,
+		myTable,
 	},
 	data() {
 		return {
-			img1: require('@/assets/image/user.png'),
-			text: ['近12天日活跃用户', '全国六地区注册累计榜', '周均日活前三城市近5天走势'],
+			img1: require("@/assets/image/user.png"),
+			text: [
+				"近12天日活跃用户",
+				"全国六地区注册累计榜",
+				"周均日活前三城市近5天走势",
+			],
 			lineData: {
 				id: "line3",
 				xAxisData: [
@@ -116,12 +124,14 @@ export default {
 		.contTop {
 			height: 240px;
 			border: 1px solid #fff;
+			background: rgba(34, 34, 34, 0.5);
 		}
 
 		.rightTable {
 			height: 380px;
 			margin-top: 10px;
 			border: 1px solid #fff;
+			background: rgba(34, 34, 34, 0.5);
 		}
 	}
 }

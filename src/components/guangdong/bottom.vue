@@ -4,18 +4,21 @@
 		<ul class="bottom">
 			<li>
 				<div class="title">
+					<span></span>
 					<i class="icon1"></i>
 					全国六地区最新日活
 				</div>
 			</li>
 			<li>
 				<div class="title">
+					<span></span>
 					<i class="icon2"></i>
 					惠省钱（建行生活入口）数据
 				</div>
 			</li>
 			<li>
 				<div class="title">
+					<span></span>
 					<i class="icon3"></i>
 					周均日活前三城市近5天走势
 				</div>
@@ -23,6 +26,7 @@
 			</li>
 			<li>
 				<div class="title">
+					<span></span>
 					<i class="icon4"></i>
 					近5天生活卡新增
 				</div>
@@ -30,6 +34,7 @@
 			</li>
 			<li>
 				<div class="title">
+					<span></span>
 					<i class="icon5"></i>
 					近5天新增注册
 				</div>
@@ -227,6 +232,10 @@ export default {
 			width: 267px;
 			display: flex;
 			align-items: center;
+			span {
+				height: 22px;
+				border-left: 2px solid #fff;
+			}
 			i {
 				height: 24px;
 				width: 24px;
@@ -234,7 +243,7 @@ export default {
 				margin: 0 8px;
 			}
 			.icon1 {
-				background: url(../../assets/image/user.png) no-repeat;
+				background: url(@/assets/image/user.png) no-repeat;
 				background-size: 100% 100%;
 			}
 			.icon2 {
@@ -242,15 +251,15 @@ export default {
 				background-size: 100% 100%;
 			}
 			.icon3 {
-				background: url(../../assets/image/user.png) no-repeat;
+				background: url(@/assets/image/user.png) no-repeat;
 				background-size: 100% 100%;
 			}
 			.icon4 {
-				background: url(../../assets/image/bao.png) no-repeat;
+				background: url(@/assets/image/bao.png) no-repeat;
 				background-size: 100% 100%;
 			}
 			.icon5 {
-				background: url(../../assets/image/add.png) no-repeat;
+				background: url(@/assets/image/add.png) no-repeat;
 				background-size: 100% 100%;
 			}
 		}

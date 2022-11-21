@@ -31,7 +31,7 @@ export default {
 	height: 100vh;
 	position: relative;
 	overflow: hidden;
-	background-color: #020308;
+	background-color: #000;
 	color: #fff;
 }
 .mainIndex {
