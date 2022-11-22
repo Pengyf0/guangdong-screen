@@ -16,6 +16,10 @@
 					<i class="icon2"></i>
 					惠省钱（建行生活入口）数据
 				</div>
+				<div class="cumText">
+					近30天累计：{{ cumAndAdd.thirty }}
+					<span>当天新增：{{ cumAndAdd.onDay }}</span>
+				</div>
 				<myXaioxBar :barObj="moneyBarData"></myXaioxBar>
 			</li>
 			<li>
@@ -49,12 +53,14 @@
 <script>
 import myLine from "./echartsType/line.vue";
 import myTitle from './title/Title.vue';
-import myYaioxBar from './echartsType/YaioxBar.vue'
+import myYaioxBar from './echartsType/YaioxBar.vue';
+import myXaioxBar from './echartsType/XaioxBar.vue'
 export default {
 	components: {
 		myLine,
 		myTitle,
 		myYaioxBar,
+		myXaioxBar
 	},
 	data() {
 		return {
@@ -108,6 +114,11 @@ export default {
 				seriesData: [135, 147, 218, 448, 500, 104],
 				color: '#FF6600'
 			},
+			// 惠省钱（建行生活入口）数据
+			cumAndAdd: {
+				thirty: 2008,
+				onDay: 200
+			}
 		};
 	},
 	mounted() {
@@ -285,6 +296,18 @@ export default {
 			.icon5 {
 				background: url(@/assets/image/add.png) no-repeat;
 				background-size: 100% 100%;
+			}
+		}
+
+		.cumText {
+			font-size: 12px;
+			font-family: FZLanTingHeiS-DB-GB-Regular, FZLanTingHeiS-DB-GB;
+			color: #C0C0BF;
+			padding: 20px;
+			box-sizing: border-box;
+
+			span {
+				margin-left: 36px;
 			}
 		}
 	}

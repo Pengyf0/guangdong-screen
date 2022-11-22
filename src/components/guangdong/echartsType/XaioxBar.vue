@@ -1,5 +1,5 @@
 <template>
-    <div :id="barObj?.id" class="echart"></div>
+    <div :id="barObj?.id" class="echartMar"></div>
 </template>
 
 <script>
@@ -35,7 +35,7 @@ export default {
                 grid: {
                     left: "5%",
                     right: "8%",
-                    bottom: "10%",
+                    bottom: "5%",
                     top: "10%",
                     containLabel: true,
                 },
@@ -91,8 +91,8 @@ export default {
 </script>
  
 <style lang = "less" scoped>
-.echart {
+.echartMar {
     width: 100%;
-    height: calc(100% - 36px);
+    height: calc(100% - 92px);
 }
 </style>
