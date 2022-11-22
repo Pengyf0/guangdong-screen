@@ -2,11 +2,28 @@
 	<div>
 		<section class="midContent">
 			<div class="mid1">
+				<div class="midTit"></div>
 				<div class="contTop">
-					<div>新增用户</div>
-					<div>活跃用户</div>
-					<div>aum20w以上</div>
-					<div>aum50W以上</div>
+					<div>
+						<span>新增用户</span><br>
+						<span class="mid1Num">{{ leftTopData.addUser.num }}</span><span class="unit">人</span><br>
+						<span class="mid1Time">{{ leftTopData.addUser.time }}</span>
+					</div>
+					<div>
+						<span>活跃用户</span><br>
+						<span class="mid1Num">{{ leftTopData.actUser.num }}</span><span class="unit">人</span><br>
+						<span class="mid1Time">{{ leftTopData.actUser.time }}</span>
+					</div>
+					<div>
+						<span>aum20w以上</span><br>
+						<span class="mid1Num">{{ leftTopData.twentyW.num }}</span><span class="unit">%</span><br>
+						<span class="mid1Time">{{ leftTopData.twentyW.time }}</span>
+					</div>
+					<div>
+						<span>aum50W以上</span><br>
+						<span class="mid1Num">{{ leftTopData.fifTyW.num }}</span><span class="unit">%</span><br>
+						<span class="mid1Time">{{ leftTopData.fifTyW.time }}</span>
+					</div>
 				</div>
 				<div class="leftBar">
 					<myTitle :text="text[1]" :img='img2' />
@@ -14,7 +31,14 @@
 				</div>
 			</div>
 			<div class="mid2">
-				<div class="contTop"></div>
+				<div class="contTop">
+					<div class="centReg">累计注册人数（人）</div>
+					<div class="centNum">4561225</div>
+					<ul class="centUser">
+						<li>累计生活卡用户<span>123456</span>&nbsp;人</li>
+						<li>累计合作商户<span>1154</span>&nbsp;家</li>
+					</ul>
+				</div>
 				<div class="midMap"></div>
 			</div>
 			<div class="mid3">
@@ -78,12 +102,36 @@ export default {
 				seriesData: [1000, 500, 448, 218, 147, 135,],
 				color: ['#FF9F00', '#FF6200', '#FF6600']
 			},
+			// 左上数据
+			leftTopData: {
+				addUser: {
+					num: 1210,
+					time: '2022-11-16'
+				},
+				actUser: {
+					num: 185112,
+					time: '2022-11-16'
+				},
+				twentyW: {
+					num: 27.62,
+					time: '2022-12-10'
+				},
+				fifTyW: {
+					num: 50.62,
+					time: '2022-12-10'
+				}
 
+			}
 		};
 	},
 };
 </script>
 <style lang="less" scoped>
+@font-face {
+	font-family: "DS-Digib";
+	src: url("@/assets/font/DIN\ Alternate\ Bold.ttf");
+}
+
 .midContent {
 	height: 650px;
 	padding: 10px 0;
@@ -109,6 +157,34 @@ export default {
 				height: 120px;
 				border: 1px solid #fff;
 			}
+
+			.mid1Num {
+				height: 60px;
+				font-size: 48px;
+				font-family: DS-Digib;
+				font-weight: bold;
+				color: #F7BC27;
+				line-height: 60px;
+			}
+
+			.mid1Time {
+				font-size: 14px;
+				color: #C0C0BF;
+			}
+
+			.unit {
+				font-size: 20px;
+				color: #F7BC27;
+				font-family: DS-Digib;
+				font-weight: bold;
+			}
+		}
+
+		.midTit {
+			height: 9px;
+			width: 100%;
+			background: url(@/assets/image/title.png) no-repeat;
+			background-size: 100% 100%;
 		}
 
 		.leftBar {
@@ -124,6 +200,43 @@ export default {
 		.contTop {
 			height: 240px;
 			border: 1px solid #fff;
+
+			.centReg {
+				height: 24px;
+				font-size: 24px;
+				color: #FFFFFF;
+				line-height: 24px;
+				margin-top: 10px;
+			}
+
+			.centNum {
+				height: 60px;
+				font-size: 80px;
+				font-family: DS-Digib;
+				font-weight: bold;
+				color: #FF6600;
+				line-height: 60px;
+				margin-top: 18px;
+			}
+
+			.centUser {
+				margin-top: 28px;
+				display: flex;
+				// justify-content: space-around;
+
+				li {
+					flex: 1;
+					font-size: 18px;
+					color: #C0C0BF;
+
+					span {
+						font-size: 36px;
+						font-family: DS-Digib;
+						font-weight: bold;
+						color: #FFFFFF;
+					}
+				}
+			}
 		}
 
 		.midMap {
