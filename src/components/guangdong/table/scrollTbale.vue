@@ -1,29 +1,23 @@
 <template>
 	<div class="scrollTbale">
 		<div class="titl">
-			<div>序号</div>
-			<div>城市</div>
-			<div>券名</div>
-			<div>领取人数</div>
-			<div>核销人数</div>
+			<div class="titlItem" v-for="(item, ind) in title" :key="ind">
+				{{ item }}
+			</div>
 		</div>
 		<div
 			class="tableOut"
 			id="tableOut"
 			@mouseenter="mouseenterEvent()"
-			@mouseleave="mouseleaveEvent(200)"
+			@mouseleave="mouseleaveEvent(50)"
 		>
 			<div id="scoll1">
-				<div class="flexBox" v-for="index in 20" :key="index">
+				<!-- <div class="flexBox" v-for="index in 20" :key="index">
 					{{ index }}
+				</div> -->
+				<div class="flxBox" v-for="(item, index) in tableData" :key="index">
+					<div v-for="(it2, ind2) in item" :key="ind2">{{ it2 }}</div>
 				</div>
-				<!-- <div class="flxBox" v-for="(item, index) in couponData" :key="index">
-						<div>{{ item.rank > 9 ? item.rank : "0" + item.rank }}</div>
-						<div>{{ item.orgName }}</div>
-						<div :title="item.couponName">{{ item.couponName }}</div>
-						<div>{{ item.gainCnt | numberFilter }}</div>
-						<div>{{ item.verCnt | numberFilter }}</div>
-					</div> -->
 			</div>
 			<div id="scoll2"></div>
 		</div>
@@ -35,10 +29,30 @@ export default {
 	data() {
 		return {
 			timer: null,
+			title: [
+				"一级支行",
+				"AUM5w注册数",
+				"AUM5w\n覆盖度",
+				"AUM20w\n注册数",
+				"AUM20w\n覆盖度",
+			],
+			tableData: [
+				{ city: "天河1", num1: "2", num2: "3", num3: "4", num4: "5" },
+				{ city: "天河2", num1: "2", num2: "3", num3: "4", num4: "5" },
+				{ city: "天河3", num1: "2", num2: "3", num3: "4", num4: "5" },
+				{ city: "天河4", num1: "2", num2: "3", num3: "4", num4: "5" },
+				{ city: "天河5", num1: "2", num2: "3", num3: "4", num4: "5" },
+				{ city: "天河6", num1: "2", num2: "3", num3: "4", num4: "5" },
+				{ city: "天河7", num1: "2", num2: "3", num3: "4", num4: "5" },
+				{ city: "天河8", num1: "2", num2: "3", num3: "4", num4: "5" },
+				{ city: "天河9", num1: "2", num2: "3", num3: "4", num4: "5" },
+				{ city: "天河10", num1: "2", num2: "3", num3: "4", num4: "5" },
+				{ city: "天河11", num1: "2", num2: "3", num3: "4", num4: "5" },
+			],
 		};
 	},
 	mounted() {
-		this.scroll(200);
+		this.scroll(50);
 	},
 	methods: {
 		scroll(t) {
@@ -52,6 +66,7 @@ export default {
 			// 初始值
 			tableOut.scrollTop = 0;
 			// 赋值给空ul
+			if (this.tableData.length < 11) return;
 			ul2.innerHTML = ul.innerHTML;
 			this.timer = setInterval(this.rollStart, t);
 		},
@@ -67,7 +82,6 @@ export default {
 		},
 		// 鼠标移入关闭定时器
 		mouseenterEvent() {
-			console.log("移入");
 			if (this.timer) {
 				clearInterval(this.timer);
 				this.timer = null;
@@ -92,25 +106,30 @@ export default {
 	.flxBox,
 	.titl {
 		height: 30px;
-		line-height: 30px;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		background: rgba(51, 51, 52, 0.5);
 		color: #ff6600;
 		padding: 0 20px;
 		font-weight: 600;
+		font-size: 14px;
 		box-sizing: border-box;
 
-		div {
-			flex: 1;
-		}
 		div:nth-of-type(1) {
-			max-width: 50px;
+			max-width: 60px;
 		}
 	}
+
+	.flxBox:nth-of-type(odd) {
+		background: rgba(34, 34, 34, 0.7);
+	}
+
 	.titl {
 		height: 50px;
-		line-height: 30px;
+		div {
+			width: 60px;
+		}
 	}
 	.tableOut {
 		height: calc(100% - 50px);
