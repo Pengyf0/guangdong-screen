@@ -26,7 +26,7 @@
 					</div>
 				</div>
 				<div class="leftBar">
-					<myTitle :text="text[1]" :img='img2' />
+					<myTitle :text="text[1]" :img="img2" />
 					<myYaioxBar :barObj="regBarData"></myYaioxBar>
 				</div>
 			</div>
@@ -56,20 +56,20 @@
 
 <script>
 import myLine from "./echartsType/line.vue";
-import myTitle from "./title/Title.vue"
-import myYaioxBar from './echartsType/YaioxBar.vue'
+import myTitle from "./title/Title.vue";
+import myYaioxBar from "./echartsType/YaioxBar.vue";
 import myTable from "./table/scrollTbale.vue";
 export default {
 	components: {
 		myLine,
 		myTitle,
 		myTable,
-		myYaioxBar
+		myYaioxBar,
 	},
 	data() {
 		return {
-			img1: require('@/assets/image/user.png'),
-			img2: require('@/assets/image/add.png'),
+			img1: require("@/assets/image/user.png"),
+			img2: require("@/assets/image/add.png"),
 			text: [
 				"近12天日活跃用户",
 				"全国六地区注册累计榜",
@@ -99,8 +99,8 @@ export default {
 			regBarData: {
 				id: "bar1",
 				yAxisData: ["广州", "北京", "上海", "天津", "重庆", "深圳"],
-				seriesData: [1000, 500, 448, 218, 147, 135,],
-				color: ['#FF9F00', '#FF6200', '#FF6600']
+				seriesData: [1000, 500, 448, 218, 147, 135],
+				color: ["#FF9F00", "#FF6200", "#FF6600"],
 			},
 			// 左上数据
 			leftTopData: {
@@ -133,8 +133,8 @@ export default {
 }
 
 .midContent {
-	height: 650px;
-	padding: 10px 0;
+	height: 640px;
+	padding-top: 10px;
 	text-align: center;
 	display: flex;
 	box-sizing: border-box;
@@ -145,7 +145,6 @@ export default {
 
 		.contTop {
 			height: 310px;
-			border: 1px solid #fff;
 			padding: 20px 50px;
 			display: flex;
 			flex-flow: wrap;
@@ -155,7 +154,6 @@ export default {
 			div {
 				width: 200px;
 				height: 120px;
-				border: 1px solid #fff;
 			}
 
 			.mid1Num {
@@ -190,7 +188,6 @@ export default {
 		.leftBar {
 			height: 310px;
 			margin-top: 10px;
-			border: 1px solid #fff;
 		}
 	}
 
@@ -241,7 +238,6 @@ export default {
 
 		.midMap {
 			height: 390px;
-			border: 1px solid #fff;
 		}
 	}
 
@@ -250,14 +246,12 @@ export default {
 
 		.contTop {
 			height: 240px;
-			border: 1px solid #fff;
 			background: rgba(34, 34, 34, 0.5);
 		}
 
 		.rightTable {
 			height: 380px;
 			margin-top: 10px;
-			border: 1px solid #fff;
 			background: rgba(34, 34, 34, 0.5);
 		}
 	}

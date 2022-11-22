@@ -52,15 +52,15 @@
 
 <script>
 import myLine from "./echartsType/line.vue";
-import myTitle from './title/Title.vue';
-import myYaioxBar from './echartsType/YaioxBar.vue';
-import myXaioxBar from './echartsType/XaioxBar.vue'
+import myTitle from "./title/Title.vue";
+import myYaioxBar from "./echartsType/YaioxBar.vue";
+import myXaioxBar from "./echartsType/XaioxBar.vue";
 export default {
 	components: {
 		myLine,
 		myTitle,
 		myYaioxBar,
-		myXaioxBar
+		myXaioxBar,
 	},
 	data() {
 		return {
@@ -104,21 +104,21 @@ export default {
 			dayBarData: {
 				id: "bar2",
 				yAxisData: ["北京", "天津", "上海", "广州", "成都", "深圳"],
-				seriesData: [10020, 5000, 4448, 3218, 2147, 1835],//倒序
-				color: ['#FADE4D', '#F7BC27', '#F7BD27']
+				seriesData: [10020, 5000, 4448, 3218, 2147, 1835], //倒序
+				color: ["#FADE4D", "#F7BC27", "#F7BD27"],
 			},
 			// 惠省钱（建行生活入口）数据
 			moneyBarData: {
 				id: "bar3",
 				xAxisData: ["0点", "3点", "6点", "12点", "15点", "24点"],
 				seriesData: [135, 147, 218, 448, 500, 104],
-				color: '#FF6600'
+				color: "#FF6600",
 			},
 			// 惠省钱（建行生活入口）数据
 			cumAndAdd: {
 				thirty: 2008,
-				onDay: 200
-			}
+				onDay: 200,
+			},
 		};
 	},
 	mounted() {
@@ -240,23 +240,23 @@ export default {
 </script>
 <style lang="less" scoped>
 .bottom {
-	height: 315px;
-	border: 1px solid #fff;
-	padding: 10px 0;
+	height: 295px;
+	margin-top: 10px;
 	display: flex;
-
+	box-sizing: border-box;
 	li {
-		height: 295px;
+		height: 285px;
 		width: 365px;
 		background: rgba(34, 34, 34, 0.5);
-
 		.title {
 			height: 36px;
 			font-size: 18px;
 			white-space: nowrap;
-			background: linear-gradient(90deg,
-					rgba(255, 159, 0, 0.63) 0%,
-					rgba(255, 102, 0, 0) 100%);
+			background: linear-gradient(
+				90deg,
+				rgba(255, 159, 0, 0.63) 0%,
+				rgba(255, 102, 0, 0) 100%
+			);
 			width: 267px;
 			display: flex;
 			align-items: center;
@@ -302,7 +302,7 @@ export default {
 		.cumText {
 			font-size: 12px;
 			font-family: FZLanTingHeiS-DB-GB-Regular, FZLanTingHeiS-DB-GB;
-			color: #C0C0BF;
+			color: #c0c0bf;
 			padding: 20px;
 			box-sizing: border-box;
 
@@ -312,7 +312,7 @@ export default {
 		}
 	}
 
-	li+li {
+	li + li {
 		margin-left: 10px;
 	}
 }

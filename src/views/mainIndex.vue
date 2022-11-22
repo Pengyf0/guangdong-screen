@@ -4,6 +4,7 @@
 			<headerVue />
 			<Content />
 			<Bottom />
+			<div class="botBg"></div>
 		</div>
 	</div>
 </template>
@@ -47,5 +48,9 @@ export default {
 	transform-origin: left top;
 	overflow: hidden;
 	box-sizing: border-box;
+	.botBg {
+		height: 28px;
+		background: url(@/assets/image/bottom.png);
+	}
 }
 </style>
