@@ -119,6 +119,9 @@ export default {
 		div:nth-of-type(1) {
 			max-width: 60px;
 		}
+		div {
+			min-width: 60px;
+		}
 	}
 
 	.flxBox:nth-of-type(odd) {
