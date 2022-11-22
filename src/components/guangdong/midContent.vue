@@ -5,23 +5,27 @@
 				<div class="midTit"></div>
 				<div class="contTop">
 					<div>
-						<span>新增用户</span><br>
-						<span class="mid1Num">{{ leftTopData.addUser.num }}</span><span class="unit">人</span><br>
+						<span>新增用户</span><br />
+						<span class="mid1Num">{{ leftTopData.addUser.num }}</span
+						><span class="unit">人</span><br />
 						<span class="mid1Time">{{ leftTopData.addUser.time }}</span>
 					</div>
 					<div>
-						<span>活跃用户</span><br>
-						<span class="mid1Num">{{ leftTopData.actUser.num }}</span><span class="unit">人</span><br>
+						<span>活跃用户</span><br />
+						<span class="mid1Num">{{ leftTopData.actUser.num }}</span
+						><span class="unit">人</span><br />
 						<span class="mid1Time">{{ leftTopData.actUser.time }}</span>
 					</div>
 					<div>
-						<span>aum20w以上</span><br>
-						<span class="mid1Num">{{ leftTopData.twentyW.num }}</span><span class="unit">%</span><br>
+						<span>aum20w以上</span><br />
+						<span class="mid1Num">{{ leftTopData.twentyW.num }}</span
+						><span class="unit">%</span><br />
 						<span class="mid1Time">{{ leftTopData.twentyW.time }}</span>
 					</div>
 					<div>
-						<span>aum50W以上</span><br>
-						<span class="mid1Num">{{ leftTopData.fifTyW.num }}</span><span class="unit">%</span><br>
+						<span>aum50W以上</span><br />
+						<span class="mid1Num">{{ leftTopData.fifTyW.num }}</span
+						><span class="unit">%</span><br />
 						<span class="mid1Time">{{ leftTopData.fifTyW.time }}</span>
 					</div>
 				</div>
@@ -106,22 +110,21 @@ export default {
 			leftTopData: {
 				addUser: {
 					num: 1210,
-					time: '2022-11-16'
+					time: "2022-11-16",
 				},
 				actUser: {
 					num: 185112,
-					time: '2022-11-16'
+					time: "2022-11-16",
 				},
 				twentyW: {
 					num: 27.62,
-					time: '2022-12-10'
+					time: "2022-12-10",
 				},
 				fifTyW: {
 					num: 50.62,
-					time: '2022-12-10'
-				}
-
-			}
+					time: "2022-12-10",
+				},
+			},
 		};
 	},
 };
@@ -138,7 +141,6 @@ export default {
 	text-align: center;
 	display: flex;
 	box-sizing: border-box;
-	background: rgba(34, 34, 34, 0.5);
 
 	.mid1 {
 		width: 560px;
@@ -150,6 +152,7 @@ export default {
 			flex-flow: wrap;
 			justify-content: space-between;
 			box-sizing: border-box;
+			background: rgba(34, 34, 34, 0.5);
 
 			div {
 				width: 200px;
@@ -161,18 +164,18 @@ export default {
 				font-size: 48px;
 				font-family: DS-Digib;
 				font-weight: bold;
-				color: #F7BC27;
+				color: #f7bc27;
 				line-height: 60px;
 			}
 
 			.mid1Time {
 				font-size: 14px;
-				color: #C0C0BF;
+				color: #c0c0bf;
 			}
 
 			.unit {
 				font-size: 20px;
-				color: #F7BC27;
+				color: #f7bc27;
 				font-family: DS-Digib;
 				font-weight: bold;
 			}
@@ -188,6 +191,7 @@ export default {
 		.leftBar {
 			height: 310px;
 			margin-top: 10px;
+			background: rgba(34, 34, 34, 0.5);
 		}
 	}
 
@@ -196,12 +200,11 @@ export default {
 
 		.contTop {
 			height: 240px;
-			border: 1px solid #fff;
 
 			.centReg {
 				height: 24px;
 				font-size: 24px;
-				color: #FFFFFF;
+				color: #ffffff;
 				line-height: 24px;
 				margin-top: 10px;
 			}
@@ -211,7 +214,7 @@ export default {
 				font-size: 80px;
 				font-family: DS-Digib;
 				font-weight: bold;
-				color: #FF6600;
+				color: #ff6600;
 				line-height: 60px;
 				margin-top: 18px;
 			}
@@ -224,13 +227,13 @@ export default {
 				li {
 					flex: 1;
 					font-size: 18px;
-					color: #C0C0BF;
+					color: #c0c0bf;
 
 					span {
 						font-size: 36px;
 						font-family: DS-Digib;
 						font-weight: bold;
-						color: #FFFFFF;
+						color: #ffffff;
 					}
 				}
 			}

@@ -48,9 +48,13 @@ export default {
 	transform-origin: left top;
 	overflow: hidden;
 	box-sizing: border-box;
+	background: url(@/assets/image/map.png) no-repeat;
+	background-size: 1366px 688px;
+	background-position: 277px 210px;
 	.botBg {
 		height: 28px;
-		background: url(@/assets/image/bottom.png);
+		background: url(@/assets/image/bottom.png) no-repeat;
+		background-position: -36px 0;
 	}
 }
 </style>
