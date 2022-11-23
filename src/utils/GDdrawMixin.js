@@ -51,7 +51,6 @@ export default {
     },
     resize() {
       clearTimeout(this.drawTiming)
-      console.log(6666,)
       this.drawTiming = setTimeout(() => {
         this.calcRate()
       }, 200)

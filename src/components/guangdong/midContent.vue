@@ -43,7 +43,18 @@
 						<li>累计合作商户<span>1154</span>&nbsp;家</li>
 					</ul>
 				</div>
-				<div class="midMap"></div>
+				<div class="midMap">
+					<div class="six">全国六地区注册用户（人）</div>
+					<div class="time">2022-11-16</div>
+					<div class="city">
+						<div class="city1">成都 1788</div>
+						<div class="city2">北京 1070</div>
+						<div class="city3">上海 2933</div>
+						<div class="city4">深圳 3505</div>
+						<div class="city5">杭州 633</div>
+						<div class="city6 active">广州 1210</div>
+					</div>
+				</div>
 			</div>
 			<div class="mid3">
 				<div class="contTop">
@@ -74,11 +85,7 @@ export default {
 		return {
 			img1: require("@/assets/image/user.png"),
 			img2: require("@/assets/image/add.png"),
-			text: [
-				"近12天日活跃用户",
-				"全国六地区注册累计榜",
-				"周均日活前三城市近5天走势",
-			],
+			text: ["近12天日活跃用户", "全国六地区注册累计榜", "近12天日活跃用户"],
 			lineData: {
 				id: "line3",
 				xAxisData: [
@@ -241,6 +248,72 @@ export default {
 
 		.midMap {
 			height: 390px;
+
+			.six {
+				height: 40px;
+				line-height: 40px;
+				font-size: 24px;
+			}
+			.time {
+				font-size: 20px;
+				color: #c0c0bf;
+				opacity: 0.5;
+			}
+			.city {
+				height: 330px;
+				width: 100%;
+				position: relative;
+				div {
+					width: 121px;
+					height: 27px;
+					position: absolute;
+					background: linear-gradient(
+						90deg,
+						rgba(0, 0, 0, 0) 3%,
+						#000000 15%,
+						#000000 87%,
+						rgba(0, 0, 0, 0) 100%
+					);
+					border-radius: 0px 0px 0px 0px;
+					opacity: 0.7;
+				}
+				.active {
+					font-size: 20px;
+					color: #733b00;
+					background: linear-gradient(
+						90deg,
+						rgba(246, 188, 39, 0) 0%,
+						#f7bd27 11%,
+						#f7bd27 88%,
+						rgba(246, 188, 39, 0) 100%
+					);
+					font-family: FZLanTingHeiS-B-GB-Regular, FZLanTingHeiS-B-GB;
+				}
+				.city1 {
+					left: 270px;
+					top: 95px;
+				}
+				.city2 {
+					left: 440px;
+					top: 8px;
+				}
+				.city3 {
+					left: 510px;
+					top: 80px;
+				}
+				.city4 {
+					right: 100px;
+					bottom: 96px;
+				}
+				.city5 {
+					right: 20px;
+					bottom: 170px;
+				}
+				.city6 {
+					left: 408px;
+					top: 145px;
+				}
+			}
 		}
 	}
 
