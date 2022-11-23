@@ -193,7 +193,7 @@ export default {
 		.midTit {
 			height: 9px;
 			width: 100%;
-			background: url(@/assets/images/title.png) no-repeat;
+			background: url(@/assets/images/gztitle.png) no-repeat;
 			background-size: 100% 100%;
 		}
 
