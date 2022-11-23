@@ -90,7 +90,7 @@ export default {
 	.titBox {
 		width: 1862px;
 		height: 93px;
-		background-image: url("@/assets/image/head.png");
+		background-image: url("@/assets/images/head.png");
 	}
 
 	.timeBox {

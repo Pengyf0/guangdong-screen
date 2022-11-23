@@ -6,26 +6,22 @@
 				<div class="contTop">
 					<div>
 						<span>新增用户</span><br />
-						<span class="mid1Num">{{ leftTopData.addUser.num }}</span
-						><span class="unit">人</span><br />
+						<span class="mid1Num">{{ leftTopData.addUser.num }}</span><span class="unit">人</span><br />
 						<span class="mid1Time">{{ leftTopData.addUser.time }}</span>
 					</div>
 					<div>
 						<span>活跃用户</span><br />
-						<span class="mid1Num">{{ leftTopData.actUser.num }}</span
-						><span class="unit">人</span><br />
+						<span class="mid1Num">{{ leftTopData.actUser.num }}</span><span class="unit">人</span><br />
 						<span class="mid1Time">{{ leftTopData.actUser.time }}</span>
 					</div>
 					<div>
 						<span>aum20w以上</span><br />
-						<span class="mid1Num">{{ leftTopData.twentyW.num }}</span
-						><span class="unit">%</span><br />
+						<span class="mid1Num">{{ leftTopData.twentyW.num }}</span><span class="unit">%</span><br />
 						<span class="mid1Time">{{ leftTopData.twentyW.time }}</span>
 					</div>
 					<div>
 						<span>aum50W以上</span><br />
-						<span class="mid1Num">{{ leftTopData.fifTyW.num }}</span
-						><span class="unit">%</span><br />
+						<span class="mid1Num">{{ leftTopData.fifTyW.num }}</span><span class="unit">%</span><br />
 						<span class="mid1Time">{{ leftTopData.fifTyW.time }}</span>
 					</div>
 				</div>
@@ -37,10 +33,10 @@
 			<div class="mid2">
 				<div class="contTop">
 					<div class="centReg">累计注册人数（人）</div>
-					<div class="centNum">4561225</div>
+					<div class="centNum">{{ cumUserData.cumReg }}</div>
 					<ul class="centUser">
-						<li>累计生活卡用户<span>123456</span>&nbsp;人</li>
-						<li>累计合作商户<span>1154</span>&nbsp;家</li>
+						<li>累计生活卡用户<span>{{ cumUserData.cumLife }}</span>&nbsp;人</li>
+						<li>累计合作商户<span>{{ cumUserData.cumMer }}</span>&nbsp;家</li>
 					</ul>
 				</div>
 				<div class="midMap">
@@ -83,8 +79,8 @@ export default {
 	},
 	data() {
 		return {
-			img1: require("@/assets/image/user.png"),
-			img2: require("@/assets/image/add.png"),
+			img1: require("@/assets/images/user.png"),
+			img2: require("@/assets/images/add.png"),
 			text: ["近12天日活跃用户", "全国六地区注册累计榜", "近12天日活跃用户"],
 			lineData: {
 				id: "line3",
@@ -132,6 +128,12 @@ export default {
 					time: "2022-12-10",
 				},
 			},
+			// 中上累计数据
+			cumUserData: {
+				cumReg: 1565482,
+				cumLife: 22222,
+				cumMer: 22542
+			}
 		};
 	},
 };
@@ -191,7 +193,7 @@ export default {
 		.midTit {
 			height: 9px;
 			width: 100%;
-			background: url(@/assets/image/title.png) no-repeat;
+			background: url(@/assets/images/title.png) no-repeat;
 			background-size: 100% 100%;
 		}
 
@@ -254,61 +256,68 @@ export default {
 				line-height: 40px;
 				font-size: 24px;
 			}
+
 			.time {
 				font-size: 20px;
 				color: #c0c0bf;
 				opacity: 0.5;
 			}
+
 			.city {
 				height: 330px;
 				width: 100%;
 				position: relative;
+
 				div {
 					width: 121px;
 					height: 27px;
 					position: absolute;
-					background: linear-gradient(
-						90deg,
-						rgba(0, 0, 0, 0) 3%,
-						#000000 15%,
-						#000000 87%,
-						rgba(0, 0, 0, 0) 100%
-					);
+					background: linear-gradient(90deg,
+							rgba(0, 0, 0, 0) 3%,
+							#000000 15%,
+							#000000 87%,
+							rgba(0, 0, 0, 0) 100%);
 					border-radius: 0px 0px 0px 0px;
 					opacity: 0.7;
 				}
+
 				.active {
 					font-size: 20px;
 					color: #733b00;
-					background: linear-gradient(
-						90deg,
-						rgba(246, 188, 39, 0) 0%,
-						#f7bd27 11%,
-						#f7bd27 88%,
-						rgba(246, 188, 39, 0) 100%
-					);
+					background: linear-gradient(90deg,
+							rgba(246, 188, 39, 0) 0%,
+							#f7bd27 11%,
+							#f7bd27 88%,
+							rgba(246, 188, 39, 0) 100%);
+					opacity: 1;
 					font-family: FZLanTingHeiS-B-GB-Regular, FZLanTingHeiS-B-GB;
 				}
+
 				.city1 {
 					left: 270px;
 					top: 95px;
 				}
+
 				.city2 {
 					left: 440px;
 					top: 8px;
 				}
+
 				.city3 {
 					left: 510px;
 					top: 80px;
 				}
+
 				.city4 {
 					right: 100px;
 					bottom: 96px;
 				}
+
 				.city5 {
 					right: 20px;
 					bottom: 170px;
 				}
+
 				.city6 {
 					left: 408px;
 					top: 145px;

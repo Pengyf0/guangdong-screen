@@ -64,8 +64,8 @@ export default {
 	},
 	data() {
 		return {
-			img1: require("@/assets/image/bao.png"),
-			img2: require("@/assets/image/add.png"),
+			img1: require("@/assets/images/bao.png"),
+			img2: require("@/assets/images/add.png"),
 			text: ["近5天生活卡新增", "近5天新增注册"],
 			lineData: {
 				id: "line",
@@ -274,7 +274,7 @@ export default {
 			}
 
 			.icon1 {
-				background: url(@/assets/image/user.png) no-repeat;
+				background: url(@/assets/images/user.png) no-repeat;
 				background-size: 100% 100%;
 			}
 
@@ -284,17 +284,17 @@ export default {
 			}
 
 			.icon3 {
-				background: url(@/assets/image/user.png) no-repeat;
+				background: url(@/assets/images/user.png) no-repeat;
 				background-size: 100% 100%;
 			}
 
 			.icon4 {
-				background: url(@/assets/image/bao.png) no-repeat;
+				background: url(@/assets/images/bao.png) no-repeat;
 				background-size: 100% 100%;
 			}
 
 			.icon5 {
-				background: url(@/assets/image/add.png) no-repeat;
+				background: url(@/assets/images/add.png) no-repeat;
 				background-size: 100% 100%;
 			}
 		}
