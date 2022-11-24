@@ -279,7 +279,7 @@ export default {
 			}
 
 			.icon2 {
-				background: url(../../assets/image/me.png) no-repeat;
+				background: url(../../assets/images/me.png) no-repeat;
 				background-size: 100% 100%;
 			}
 

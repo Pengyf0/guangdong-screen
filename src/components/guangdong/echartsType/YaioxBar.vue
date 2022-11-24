@@ -6,9 +6,9 @@
 export default {
     data() {
         return {
-            cardImg1: require('@/assets/image/card1.png'),
-            cardImg2: require('@/assets/image/card2.png'),
-            cardImg3: require('@/assets/image/card3.png')
+            cardImg1: require('@/assets/images/card1.png'),
+            cardImg2: require('@/assets/images/card2.png'),
+            cardImg3: require('@/assets/images/card3.png')
 
         }
     },
