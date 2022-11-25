@@ -6,22 +6,26 @@
 				<div class="contTop">
 					<div>
 						<span>新增用户</span><br />
-						<span class="mid1Num">{{ leftTopData.addUser.num }}</span><span class="unit">人</span><br />
+						<span class="mid1Num">{{ leftTopData.addUser.num }}</span
+						><span class="unit">人</span><br />
 						<span class="mid1Time">{{ leftTopData.addUser.time }}</span>
 					</div>
 					<div>
 						<span>活跃用户</span><br />
-						<span class="mid1Num">{{ leftTopData.actUser.num }}</span><span class="unit">人</span><br />
+						<span class="mid1Num">{{ leftTopData.actUser.num }}</span
+						><span class="unit">人</span><br />
 						<span class="mid1Time">{{ leftTopData.actUser.time }}</span>
 					</div>
 					<div>
 						<span>aum20w以上</span><br />
-						<span class="mid1Num">{{ leftTopData.twentyW.num }}</span><span class="unit">%</span><br />
+						<span class="mid1Num">{{ leftTopData.twentyW.num }}</span
+						><span class="unit">%</span><br />
 						<span class="mid1Time">{{ leftTopData.twentyW.time }}</span>
 					</div>
 					<div>
 						<span>aum50W以上</span><br />
-						<span class="mid1Num">{{ leftTopData.fifTyW.num }}</span><span class="unit">%</span><br />
+						<span class="mid1Num">{{ leftTopData.fifTyW.num }}</span
+						><span class="unit">%</span><br />
 						<span class="mid1Time">{{ leftTopData.fifTyW.time }}</span>
 					</div>
 				</div>
@@ -35,20 +39,27 @@
 					<div class="centReg">累计注册人数（人）</div>
 					<div class="centNum">{{ cumUserData.cumReg }}</div>
 					<ul class="centUser">
-						<li>累计生活卡用户<span>{{ cumUserData.cumLife }}</span>&nbsp;人</li>
-						<li>累计合作商户<span>{{ cumUserData.cumMer }}</span>&nbsp;家</li>
+						<li>
+							累计生活卡用户<span>{{ cumUserData.cumLife }}</span
+							>&nbsp;人
+						</li>
+						<li>
+							累计合作商户<span>{{ cumUserData.cumMer }}</span
+							>&nbsp;家
+						</li>
 					</ul>
 				</div>
 				<div class="midMap">
 					<div class="six">全国六地区注册用户（人）</div>
 					<div class="time">2022-11-16</div>
 					<div class="city">
-						<div class="city1">成都 1788</div>
+						<myChinaMap :id="'chinaMap'"></myChinaMap>
+						<!-- <div class="city1">成都 1788</div>
 						<div class="city2">北京 1070</div>
 						<div class="city3">上海 2933</div>
 						<div class="city4">深圳 3505</div>
 						<div class="city5">杭州 633</div>
-						<div class="city6 active">广州 1210</div>
+						<div class="city6 active">广州 1210</div> -->
 					</div>
 				</div>
 			</div>
@@ -70,12 +81,14 @@ import myLine from "./echartsType/line.vue";
 import myTitle from "./title/Title.vue";
 import myYaioxBar from "./echartsType/YaioxBar.vue";
 import myTable from "./table/scrollTbale.vue";
+import myChinaMap from "./echartsType/ChinaMap.vue";
 export default {
 	components: {
 		myLine,
 		myTitle,
 		myTable,
 		myYaioxBar,
+		myChinaMap,
 	},
 	data() {
 		return {
@@ -132,8 +145,8 @@ export default {
 			cumUserData: {
 				cumReg: 1565482,
 				cumLife: 22222,
-				cumMer: 22542
-			}
+				cumMer: 22542,
+			},
 		};
 	},
 };
@@ -264,31 +277,35 @@ export default {
 			}
 
 			.city {
-				height: 330px;
+				height: 320px;
 				width: 100%;
-				position: relative;
+				// position: relative;
 
-				div {
-					width: 121px;
-					height: 27px;
-					position: absolute;
-					background: linear-gradient(90deg,
-							rgba(0, 0, 0, 0) 3%,
-							#000000 15%,
-							#000000 87%,
-							rgba(0, 0, 0, 0) 100%);
-					border-radius: 0px 0px 0px 0px;
-					opacity: 0.7;
-				}
+				// div {
+				// 	width: 121px;
+				// 	height: 27px;
+				// 	position: absolute;
+				// 	background: linear-gradient(
+				// 		90deg,
+				// 		rgba(0, 0, 0, 0) 3%,
+				// 		#000000 15%,
+				// 		#000000 87%,
+				// 		rgba(0, 0, 0, 0) 100%
+				// 	);
+				// 	border-radius: 0px 0px 0px 0px;
+				// 	opacity: 0.7;
+				// }
 
 				.active {
 					font-size: 20px;
 					color: #733b00;
-					background: linear-gradient(90deg,
-							rgba(246, 188, 39, 0) 0%,
-							#f7bd27 11%,
-							#f7bd27 88%,
-							rgba(246, 188, 39, 0) 100%);
+					background: linear-gradient(
+						90deg,
+						rgba(246, 188, 39, 0) 0%,
+						#f7bd27 11%,
+						#f7bd27 88%,
+						rgba(246, 188, 39, 0) 100%
+					);
 					opacity: 1;
 					font-family: FZLanTingHeiS-B-GB-Regular, FZLanTingHeiS-B-GB;
 				}
