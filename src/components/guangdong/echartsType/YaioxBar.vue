@@ -1,5 +1,5 @@
 <template>
-    <div :id="barObj?.id" class="echart"></div>
+	<div :id="barObj?.id" class="echart" ref="YaioxBar"></div>
 </template>
 
 <script>
@@ -179,7 +179,7 @@ export default {
  
 <style lang = "less" scoped>
 .echart {
-    width: 100%;
-    height: calc(100% - 36px);
+	width: 100%;
+	height: calc(100% - 36px);
 }
 </style>

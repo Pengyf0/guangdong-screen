@@ -6,45 +6,53 @@
 				<div class="contTop">
 					<div>
 						<span>新增用户</span><br />
-						<span class="mid1Num">{{ leftTopData.addUser.num }}</span
+						<span class="mid1Num">{{ obj1.newMebCnt.value }}</span
 						><span class="unit">人</span><br />
-						<span class="mid1Time">{{ leftTopData.addUser.time }}</span>
+						<span class="mid1Time">{{
+							obj1.newMebCnt.date ?? "2022-11-16"
+						}}</span>
 					</div>
 					<div>
 						<span>活跃用户</span><br />
-						<span class="mid1Num">{{ leftTopData.actUser.num }}</span
+						<span class="mid1Num">{{ obj1.actMebCnt.value }}</span
 						><span class="unit">人</span><br />
-						<span class="mid1Time">{{ leftTopData.actUser.time }}</span>
+						<span class="mid1Time">{{
+							obj1.actMebCnt.date ?? "2022-11-16"
+						}}</span>
 					</div>
 					<div>
 						<span>aum20w以上</span><br />
-						<span class="mid1Num">{{ leftTopData.twentyW.num }}</span
+						<span class="mid1Num">{{ obj1.aum20Cnt.value }}</span
 						><span class="unit">%</span><br />
-						<span class="mid1Time">{{ leftTopData.twentyW.time }}</span>
+						<span class="mid1Time">{{
+							obj1.aum20Cnt.date ?? "2022-11-16"
+						}}</span>
 					</div>
 					<div>
 						<span>aum50W以上</span><br />
-						<span class="mid1Num">{{ leftTopData.fifTyW.num }}</span
+						<span class="mid1Num">{{ obj1.aum50Cnt.value ?? "0" }}</span
 						><span class="unit">%</span><br />
-						<span class="mid1Time">{{ leftTopData.fifTyW.time }}</span>
+						<span class="mid1Time">{{
+							obj1.aum50Cnt.date ?? "2022-11-16"
+						}}</span>
 					</div>
 				</div>
 				<div class="leftBar">
 					<myTitle :text="text[1]" :img="img2" />
-					<myYaioxBar :barObj="regBarData"></myYaioxBar>
+					<myYaioxBar v-if="barShow" :barObj="regBarData"></myYaioxBar>
 				</div>
 			</div>
 			<div class="mid2">
 				<div class="contTop">
 					<div class="centReg">累计注册人数（人）</div>
-					<div class="centNum">{{ cumUserData.cumReg }}</div>
+					<div class="centNum">{{ obj1.mebCnt ?? "0" }}</div>
 					<ul class="centUser">
 						<li>
-							累计生活卡用户<span>{{ cumUserData.cumLife }}</span
+							累计生活卡用户<span>{{ obj1.lifecardCnt ?? "0" }}</span
 							>&nbsp;人
 						</li>
 						<li>
-							累计合作商户<span>{{ cumUserData.cumMer }}</span
+							累计合作商户<span>{{ obj1.mctCnt ?? "0" }}</span
 							>&nbsp;家
 						</li>
 					</ul>
@@ -101,9 +109,21 @@ export default {
 		myChinaMap,
 	},
 	mounted() {
-		this.$nextTick(() => {
-			console.log("22", this.obj1, this.obj2);
-		});
+		let that = this;
+		setTimeout(() => {
+			console.log("延时", that.obj1, that.obj2);
+			that.regBarData.yAxisData = that.obj2.registArea6?.map(
+				(item) => item.city
+			);
+			that.regBarData.seriesData = that.obj2.registArea6?.map(
+				(item) => item.value
+			);
+			this.barShow = true;
+			console.log("传入", that.regBarData);
+		}, 500);
+		// this.$nextTick(() => {
+		// 	console.log("左二", this.regBarData);
+		// });
 	},
 	data() {
 		return {
@@ -131,6 +151,7 @@ export default {
 				],
 			},
 			// 全国六区累计注册
+			barShow: false,
 			regBarData: {
 				id: "bar1",
 				yAxisData: ["广州", "北京", "上海", "天津", "重庆", "深圳"],
