@@ -47,6 +47,15 @@ export default {
 							areaColor: "#DA681B", //鼠标划过区块的颜色
 						},
 					},
+					regions: [      //对不同的区块进行着色
+						{
+							name: '北京', //区块名称
+							itemStyle: {
+									normal: {
+											areaColor: '#281fe1'
+									}
+							}
+					}],
 					center: [87.617733, 43.792818], //设置地图中心点的坐标 （图为将新疆设置为地图中心点）
 				},
 				series: [
@@ -55,7 +64,7 @@ export default {
 						coordinateSystem: "geo",
 						effectType: "ripple",
 						showEffectOn: "render",
-						symbolSize:5,
+						symbolSize:[5,3],
 						rippleEffect: {
 							period: 3,
 							scale: 5,
