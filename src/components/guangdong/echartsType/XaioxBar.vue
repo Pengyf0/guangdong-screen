@@ -86,6 +86,14 @@ export default {
             myChart.setOption(option);
 
         }
+    },
+    watch: {
+        barObj: {
+            handler() {
+                this.echartsInit()
+            },
+            deep: true
+        }
     }
 }
 </script>

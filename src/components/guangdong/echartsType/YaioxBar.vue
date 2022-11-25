@@ -165,6 +165,14 @@ export default {
             // console.log(this.barObj.yAxisData.indexOf(v));
             return this.barObj.yAxisData.indexOf(v)
         }
+    },
+    watch: {
+        barObj: {
+            handler() {
+                this.echartsInit()
+            },
+            deep: true
+        }
     }
 }
 </script>

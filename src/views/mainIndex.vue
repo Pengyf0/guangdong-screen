@@ -1,9 +1,9 @@
 <template >
 	<div class="layout1">
-		<div class="mainIndex" ref="appGD">
+		<div class="mainIndex" ref="appGD" v-if="show">
 			<headerVue />
 			<Content :obj1="gzRow1VO" :obj2="gzRow2VO" />
-			<Bottom :obj2="gzRow3VO" />
+			<Bottom :obj3="gzRow3VO" />
 			<div class="botBg"></div>
 		</div>
 	</div>
@@ -23,6 +23,7 @@ export default {
 	mixins: [drawMixin],
 	data() {
 		return {
+			show: false,
 			gzRow1VO: {},
 			gzRow2VO: {},
 			gzRow3VO: {},
@@ -45,6 +46,7 @@ export default {
 				this.gzRow2VO = gzRow2VO;
 				this.gzRow3VO = gzRow3VO;
 				console.log(33, gzRow1VO, gzRow2VO, gzRow3VO);
+				this.show = true
 			}
 		},
 	},

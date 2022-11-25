@@ -10,7 +10,7 @@ export default {
 		lineObj: {
 			//默认传入图表id,以及X轴数组Y轴数据，格式如下默认
 			type: Object,
-			default: () => {},
+			default: () => { },
 		},
 		// lineData: {
 		// 		id: "line1",
@@ -97,7 +97,16 @@ export default {
 			});
 		},
 	},
+	watch: {
+		lineObj: {
+			handler() {
+				this.echartsInit()
+			},
+			deep: true
+		}
+	}
 };
 </script>
 <style lang="less" scoped>
+
 </style>
