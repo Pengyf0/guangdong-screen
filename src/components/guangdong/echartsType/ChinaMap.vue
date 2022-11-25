@@ -25,7 +25,7 @@ export default {
 			//折线图初始化并且赋值
 			let myChart = this.$echarts.init(document.getElementById(this.id));
 			let option = {
-				backgroundColor: "#000",
+				// backgroundColor: "#000",
 				geo: {
 					type: "map",
 					top: "-12%",
@@ -38,11 +38,9 @@ export default {
 						show: false, //展示标签
 					},
 					itemStyle: {
-						normal: {
-							areaColor: "#CF753C", //默认区块颜色
-							borderColor: "#B46631", //区块描边颜色
-							borderWidth: 1, //区块描边颜色
-						},
+						areaColor: "#CF753C", //默认区块颜色
+						borderColor: "#B46631", //区块描边颜色
+						borderWidth: 1, //区块描边颜色
 						emphasis: {
 							areaColor: "#DA681B", //鼠标划过区块的颜色
 						},
@@ -51,9 +49,7 @@ export default {
 						{
 							name: '北京', //区块名称
 							itemStyle: {
-									normal: {
-											areaColor: '#281fe1'
-									}
+								areaColor: 'red'
 							}
 					}],
 					center: [87.617733, 43.792818], //设置地图中心点的坐标 （图为将新疆设置为地图中心点）
@@ -72,11 +68,9 @@ export default {
 						},
 						hoverAnimation: true,
 						itemStyle: {
-							normal: {
 								color: "#fff",
 								shadowBlur: 6,
 								shadowColor: "#fff",
-							},
 						},
 						zlevel: 1,
 						data: [
@@ -92,13 +86,36 @@ export default {
 						type: "lines",
 						label: {
 							show: true,
-							padding: [10, 20],
+							// padding: [10, 20],
 							color: "#fff",
 							// areaColor:'#323C48',
-							backgroundColor: "#402412",
+							// backgroundColor: "#402412",
 							opacity: 0.9,
 							borderRadius: 6,
-							formatter: "{b} {c}",
+							// formatter: "{b} {c}",
+							formatter: (p) => {
+										// 前三后三不同颜色
+										if (p.name == '广州') {
+												return `{a|${p.name + p.value}}`
+										} else {
+												return `{b|${p.name + p.value}}`
+										}
+
+								},
+            rich: {
+									a: {
+											backgroundColor: '#F7BD27',
+											color: '#733B00',
+											height: 30,
+											padding: [0, 10]
+									},
+									b: {
+											backgroundColor: '#402412',
+											height: 30,
+											padding: [0, 10]
+									},
+
+							}
 						},
 						lineStyle: {
 							type: "solid",
