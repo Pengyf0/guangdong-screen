@@ -99,3 +99,6 @@ export const getOrgCashoutOrderNumDetail = () => request.get('/jkdp/apnt/orgCash
 
 // /jkdp/apnt/mctCashoutOrderNumDetail 商户积分支付交易TOP10
 export const getMctCashoutOrderNumDetail = () => request.get('/jkdp/apnt/mctCashoutOrderNumDetail')
+
+// 广州大屏商户积分支付交易TOP10
+export const gangzhouScreen = () => request.get('/api/jkdp/gzscreen')

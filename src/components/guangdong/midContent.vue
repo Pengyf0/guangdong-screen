@@ -83,6 +83,16 @@ import myYaioxBar from "./echartsType/YaioxBar.vue";
 import myTable from "./table/scrollTbale.vue";
 import myChinaMap from "./echartsType/ChinaMap.vue";
 export default {
+	props: {
+		obj1: {
+			typer: Object,
+			default: () => {},
+		},
+		obj2: {
+			typer: Object,
+			default: () => {},
+		},
+	},
 	components: {
 		myLine,
 		myTitle,

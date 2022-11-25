@@ -56,6 +56,12 @@ import myTitle from "./title/Title.vue";
 import myYaioxBar from "./echartsType/YaioxBar.vue";
 import myXaioxBar from "./echartsType/XaioxBar.vue";
 export default {
+	props: {
+		obj3: {
+			typer: Object,
+			default: () => {},
+		},
+	},
 	components: {
 		myLine,
 		myTitle,

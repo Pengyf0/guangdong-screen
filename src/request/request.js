@@ -6,7 +6,7 @@ import axios from 'axios';
 const instance = axios.create({
     timeout: 15000, // 超时时间15s
     // baseURL: 'http://10.206.194.11:8088', //生产地址 ip+端口, 公用的前缀路径
-    baseURL: 'http://62qzsn.natappfree.cc/', // ip+端口, 公用的前缀路径
+    // baseURL: 'api/', // ip+端口, 公用的前缀路径
 });
 
 // 重写实例请求前拦截器

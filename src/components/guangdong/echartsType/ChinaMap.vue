@@ -45,13 +45,15 @@ export default {
 							areaColor: "#DA681B", //鼠标划过区块的颜色
 						},
 					},
-					regions: [      //对不同的区块进行着色
+					regions: [
+						//对不同的区块进行着色
 						{
-							name: '北京', //区块名称
+							name: "北京", //区块名称
 							itemStyle: {
-								areaColor: 'red'
-							}
-					}],
+								areaColor: "red",
+							},
+						},
+					],
 					center: [87.617733, 43.792818], //设置地图中心点的坐标 （图为将新疆设置为地图中心点）
 				},
 				series: [
@@ -60,7 +62,7 @@ export default {
 						coordinateSystem: "geo",
 						effectType: "ripple",
 						showEffectOn: "render",
-						symbolSize:[5,3],
+						symbolSize: [5, 3],
 						rippleEffect: {
 							period: 3,
 							scale: 5,
@@ -68,14 +70,14 @@ export default {
 						},
 						hoverAnimation: true,
 						itemStyle: {
-								color: "#fff",
-								shadowBlur: 6,
-								shadowColor: "#fff",
+							color: "#fff",
+							shadowBlur: 6,
+							shadowColor: "#fff",
 						},
 						zlevel: 1,
 						data: [
-							{ name: "北京", value: [116.46, 39.92],},
-							{ name: "上海", value: [121.48, 31.22], },
+							{ name: "北京", value: [116.46, 39.92] },
+							{ name: "上海", value: [121.48, 31.22] },
 							{ name: "广州", value: [113.280637, 23.125178] },
 							{ name: "深圳", value: [114.085947, 22.547] },
 							{ name: "成都", value: [104.065735, 30.659462] },
@@ -94,40 +96,38 @@ export default {
 							borderRadius: 6,
 							// formatter: "{b} {c}",
 							formatter: (p) => {
-										// 前三后三不同颜色
-										if (p.name == '广州') {
-												return `{a|${p.name + p.value}}`
-										} else {
-												return `{b|${p.name + p.value}}`
-										}
-
+								// 前三后三不同颜色
+								if (p.name == "广州") {
+									return `{a|${p.name + p.value}}`;
+								} else {
+									return `{b|${p.name + p.value}}`;
+								}
+							},
+							rich: {
+								a: {
+									backgroundColor: "#F7BD27",
+									color: "#733B00",
+									height: 30,
+									padding: [0, 10],
 								},
-            rich: {
-									a: {
-											backgroundColor: '#F7BD27',
-											color: '#733B00',
-											height: 30,
-											padding: [0, 10]
-									},
-									b: {
-											backgroundColor: '#402412',
-											height: 30,
-											padding: [0, 10]
-									},
-
-							}
+								b: {
+									backgroundColor: "#402412",
+									height: 30,
+									padding: [0, 10],
+								},
+							},
 						},
 						lineStyle: {
 							type: "solid",
 							opacity: 1,
 							color: "#fff",
 						},
-						symbol: 'triangle',
-            symbolSize: [0, 5],
+						symbol: "triangle",
+						symbolSize: [0, 5],
 						data: [
 							{
 								name: "北京",
-								value:'1070',
+								value: "1070",
 								coords: [
 									[116.46, 39.92],
 									[116.46, 48.22],
@@ -135,7 +135,7 @@ export default {
 							},
 							{
 								name: "上海",
-								value:'2933',
+								value: "2933",
 								coords: [
 									[121.48, 31.22],
 									[121.48, 40.22],
@@ -143,7 +143,7 @@ export default {
 							},
 							{
 								name: "广州",
-								value:'1210',
+								value: "1210",
 								coords: [
 									[113.280637, 23.125178],
 									[113.280637, 33.125178],
@@ -151,7 +151,7 @@ export default {
 							},
 							{
 								name: "深圳",
-								value:'3503',
+								value: "3503",
 								coords: [
 									[114.085947, 22.547],
 									[114.085947, 28.547],
@@ -159,7 +159,7 @@ export default {
 							},
 							{
 								name: "成都",
-								value:'1788',
+								value: "1788",
 								coords: [
 									[104.065735, 30.659462],
 									[104.065735, 40.659462],
@@ -167,7 +167,7 @@ export default {
 							},
 							{
 								name: "杭州",
-								value:'633',
+								value: "633",
 								coords: [
 									[120.153576, 30.287459],
 									[120.153576, 35.287459],
@@ -176,6 +176,10 @@ export default {
 							//
 						],
 					},
+					// {
+					// 	type: "map",
+					// 	data: [{ name: "北京", value: 200, itemStyle: { color: "red" } }],
+					// },
 				],
 			};
 			// 地图注册，第一个参数的名字必须和option.geo.map一致

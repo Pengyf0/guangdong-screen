@@ -2,8 +2,8 @@
 	<div class="layout1">
 		<div class="mainIndex" ref="appGD">
 			<headerVue />
-			<Content />
-			<Bottom />
+			<Content :obj1="gzRow1VO" :obj2="gzRow2VO" />
+			<Bottom :obj2="gzRow3VO" />
 			<div class="botBg"></div>
 		</div>
 	</div>
@@ -13,6 +13,7 @@ import headerVue from "@/components/guangdong/header.vue";
 import Content from "@/components/guangdong/midContent.vue";
 import Bottom from "@/components/guangdong/bottom.vue";
 import drawMixin from "../utils/GDdrawMixin";
+import { gangzhouScreen } from "../request/httpApi";
 export default {
 	components: {
 		headerVue,
@@ -21,7 +22,26 @@ export default {
 	},
 	mixins: [drawMixin],
 	data() {
-		return {};
+		return {
+			gzRow1VO: {},
+			gzRow2VO: {},
+			gzRow3VO: {},
+		};
+	},
+	mounted() {
+		this.getAlldata();
+	},
+	methods: {
+		async getAlldata() {
+			let { data, code } = await gangzhouScreen();
+			if (code === 200) {
+				let { gzRow1VO, gzRow2VO, gzRow3VO } = data;
+				this.gzRow1VO = gzRow1VO;
+				this.gzRow2VO = gzRow2VO;
+				this.gzRow3VO = gzRow3VO;
+				console.log(33, gzRow1VO, gzRow2VO, gzRow3VO);
+			}
+		},
 	},
 };
 </script>
