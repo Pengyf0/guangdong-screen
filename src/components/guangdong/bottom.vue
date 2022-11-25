@@ -58,7 +58,7 @@ import myXaioxBar from "./echartsType/XaioxBar.vue";
 export default {
 	props: {
 		obj3: {
-			typer: Object,
+			type: Object,
 			default: () => {},
 		},
 	},
@@ -128,6 +128,9 @@ export default {
 		};
 	},
 	mounted() {
+		this.$nextTick(() => {
+			console.log(this.obj3, 77);
+		});
 		this.icon3Init();
 	},
 	methods: {

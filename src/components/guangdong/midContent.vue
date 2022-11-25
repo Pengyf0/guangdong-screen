@@ -85,11 +85,11 @@ import myChinaMap from "./echartsType/ChinaMap.vue";
 export default {
 	props: {
 		obj1: {
-			typer: Object,
+			type: Object,
 			default: () => {},
 		},
 		obj2: {
-			typer: Object,
+			type: Object,
 			default: () => {},
 		},
 	},
@@ -99,6 +99,11 @@ export default {
 		myTable,
 		myYaioxBar,
 		myChinaMap,
+	},
+	mounted() {
+		this.$nextTick(() => {
+			console.log("22", this.obj1, this.obj2);
+		});
 	},
 	data() {
 		return {

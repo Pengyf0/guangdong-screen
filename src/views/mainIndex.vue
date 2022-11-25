@@ -26,9 +26,13 @@ export default {
 			gzRow1VO: {},
 			gzRow2VO: {},
 			gzRow3VO: {},
+			obj: {},
 		};
 	},
-	mounted() {
+	// mounted() {
+	// 	this.getAlldata();
+	// },
+	created() {
 		this.getAlldata();
 	},
 	methods: {
@@ -36,6 +40,7 @@ export default {
 			let { data, code } = await gangzhouScreen();
 			if (code === 200) {
 				let { gzRow1VO, gzRow2VO, gzRow3VO } = data;
+				this.obj = data;
 				this.gzRow1VO = gzRow1VO;
 				this.gzRow2VO = gzRow2VO;
 				this.gzRow3VO = gzRow3VO;
