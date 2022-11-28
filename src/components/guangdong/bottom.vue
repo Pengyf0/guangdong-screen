@@ -137,7 +137,6 @@ export default {
 	},
 	mounted() {
 		this.$nextTick(() => {
-			console.log(this.obj3, 77);
 			this.dealFn()
 		});
 		this.icon3Init();

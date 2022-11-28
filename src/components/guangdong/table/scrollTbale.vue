@@ -26,6 +26,12 @@
 
 <script>
 export default {
+	props:{
+		tableData:{
+			type:Array,
+			default:()=>[]
+		}
+	},
 	data() {
 		return {
 			timer: null,
@@ -36,19 +42,19 @@ export default {
 				"AUM20w\n注册数",
 				"AUM20w\n覆盖度",
 			],
-			tableData: [
-				{ city: "天河1", num1: "2", num2: "3", num3: "4", num4: "5" },
-				{ city: "天河2", num1: "2", num2: "3", num3: "4", num4: "5" },
-				{ city: "天河3", num1: "2", num2: "3", num3: "4", num4: "5" },
-				{ city: "天河4", num1: "2", num2: "3", num3: "4", num4: "5" },
-				{ city: "天河5", num1: "2", num2: "3", num3: "4", num4: "5" },
-				{ city: "天河6", num1: "2", num2: "3", num3: "4", num4: "5" },
-				{ city: "天河7", num1: "2", num2: "3", num3: "4", num4: "5" },
-				{ city: "天河8", num1: "2", num2: "3", num3: "4", num4: "5" },
-				{ city: "天河9", num1: "2", num2: "3", num3: "4", num4: "5" },
-				{ city: "天河10", num1: "2", num2: "3", num3: "4", num4: "5" },
-				{ city: "天河11", num1: "2", num2: "3", num3: "4", num4: "5" },
-			],
+			// tableData: [
+			// 	{ city: "天河1", num1: "2", num2: "3", num3: "4", num4: "5" },
+			// 	{ city: "天河2", num1: "2", num2: "3", num3: "4", num4: "5" },
+			// 	{ city: "天河3", num1: "2", num2: "3", num3: "4", num4: "5" },
+			// 	{ city: "天河4", num1: "2", num2: "3", num3: "4", num4: "5" },
+			// 	{ city: "天河5", num1: "2", num2: "3", num3: "4", num4: "5" },
+			// 	{ city: "天河6", num1: "2", num2: "3", num3: "4", num4: "5" },
+			// 	{ city: "天河7", num1: "2", num2: "3", num3: "4", num4: "5" },
+			// 	{ city: "天河8", num1: "2", num2: "3", num3: "4", num4: "5" },
+			// 	{ city: "天河9", num1: "2", num2: "3", num3: "4", num4: "5" },
+			// 	{ city: "天河10", num1: "2", num2: "3", num3: "4", num4: "5" },
+			// 	{ city: "天河11", num1: "2", num2: "3", num3: "4", num4: "5" },
+			// ],
 		};
 	},
 	mounted() {

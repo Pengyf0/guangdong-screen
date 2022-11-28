@@ -45,7 +45,7 @@ export default {
 				this.gzRow1VO = gzRow1VO;
 				this.gzRow2VO = gzRow2VO;
 				this.gzRow3VO = gzRow3VO;
-				console.log(33, gzRow1VO, gzRow2VO, gzRow3VO);
+				console.log('初始所有值', gzRow1VO, gzRow2VO, gzRow3VO);
 				this.show = true
 			}
 		},

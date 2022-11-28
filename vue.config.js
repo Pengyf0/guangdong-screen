@@ -7,7 +7,7 @@ module.exports = defineConfig({
     proxy: {
       '/api': {
         // target: 'http://ti8249.natappfree.cc',
-        target: 'http://192.168.8.13:8083/',
+        target: 'http://172.16.0.41:8083//',
         pathRewrite: {
           '^/api': ''
         },

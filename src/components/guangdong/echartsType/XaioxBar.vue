@@ -6,7 +6,7 @@
 export default {
     data() {
         return {
-
+        myChart :null,
 
         }
     },
@@ -23,14 +23,14 @@ export default {
         // 	},
     },
     mounted() {
+        this.myChart = this.$echarts.init(
+            document.getElementById(this.barObj?.id)
+        );
         this.echartsInit();
     },
     methods: {
         echartsInit() {
             //折线图初始化并且赋值
-            let myChart = this.$echarts.init(
-                document.getElementById(this.barObj?.id)
-            );
             let option = {
                 grid: {
                     left: "5%",
@@ -83,8 +83,7 @@ export default {
                     },
                 ],
             };
-            myChart.setOption(option);
-
+            this.myChart.setOption(option);
         }
     },
     watch: {

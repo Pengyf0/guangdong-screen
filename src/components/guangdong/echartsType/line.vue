@@ -19,17 +19,20 @@ export default {
 		// 	},
 	},
 	data() {
-		return {};
+		return {
+			myChart:null
+		};
 	},
 	mounted() {
+		this.myChart = this.$echarts.init(
+			document.getElementById(this.lineObj?.id)
+		);
 		this.echartsInit();
 	},
 	methods: {
 		echartsInit() {
 			//折线图初始化并且赋值
-			let myChart = this.$echarts.init(
-				document.getElementById(this.lineObj?.id)
-			);
+			let _this =this
 			let option = {
 				grid: {
 					top: "10%",
@@ -91,9 +94,9 @@ export default {
 					},
 				],
 			};
-			myChart.setOption(option);
+			this.myChart.setOption(option,true);
 			window.addEventListener("resize", function () {
-				myChart.resize();
+				_this.myChart.resize();
 			});
 		},
 	},

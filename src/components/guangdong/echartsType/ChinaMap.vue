@@ -13,14 +13,31 @@ export default {
 			type: String,
 			default: "chinaMap",
 		},
+		sixArr:{
+			type: Array,
+			default: ()=>[],
+		}
 	},
 	data() {
 		return {};
 	},
 	mounted() {
+		
+		
 		this.echartsInit();
 	},
+	watch: {
+		sixArr: {
+			handler() {
+				this.echartsInit()
+			},
+			deep: true
+		}
+	},
 	methods: {
+		getCityVal(name){
+			return this.sixArr.filter(item=>item.city?.slice(0,2) == name)[0]?.value
+		},
 		echartsInit() {
 			//折线图初始化并且赋值
 			let myChart = this.$echarts.init(document.getElementById(this.id));
@@ -98,9 +115,9 @@ export default {
 							formatter: (p) => {
 								// 前三后三不同颜色
 								if (p.name == "广州") {
-									return `{a|${p.name + p.value}}`;
+									return `{a|${p.name} ${p.value}}`;
 								} else {
-									return `{b|${p.name + p.value}}`;
+									return `{b|${p.name} ${p.value}}`;
 								}
 							},
 							rich: {
@@ -127,7 +144,7 @@ export default {
 						data: [
 							{
 								name: "北京",
-								value: "1070",
+								value: this.getCityVal("北京"),
 								coords: [
 									[116.46, 39.92],
 									[116.46, 48.22],
@@ -135,7 +152,7 @@ export default {
 							},
 							{
 								name: "上海",
-								value: "2933",
+								value:  this.getCityVal("上海"),
 								coords: [
 									[121.48, 31.22],
 									[121.48, 40.22],
@@ -143,7 +160,7 @@ export default {
 							},
 							{
 								name: "广州",
-								value: "1210",
+								value:  this.getCityVal("广州"),
 								coords: [
 									[113.280637, 23.125178],
 									[113.280637, 33.125178],
@@ -151,7 +168,7 @@ export default {
 							},
 							{
 								name: "深圳",
-								value: "3503",
+								value:  this.getCityVal("深圳"),
 								coords: [
 									[114.085947, 22.547],
 									[114.085947, 28.547],
@@ -159,7 +176,7 @@ export default {
 							},
 							{
 								name: "成都",
-								value: "1788",
+								value: this.getCityVal("成都"),
 								coords: [
 									[104.065735, 30.659462],
 									[104.065735, 40.659462],
@@ -167,7 +184,7 @@ export default {
 							},
 							{
 								name: "杭州",
-								value: "633",
+								value: this.getCityVal("杭州"),
 								coords: [
 									[120.153576, 30.287459],
 									[120.153576, 35.287459],
@@ -184,7 +201,7 @@ export default {
 			};
 			// 地图注册，第一个参数的名字必须和option.geo.map一致
 			this.$echarts.registerMap("china", zhongguo);
-			myChart.setOption(option);
+			myChart.setOption(option,true);
 			window.addEventListener("resize", function () {
 				myChart.resize();
 			});
