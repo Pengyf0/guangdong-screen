@@ -59,7 +59,7 @@
         </div>
         <div class="midMap">
           <div class="six">全国六地区注册用户（人/日）</div>
-          <div class="time">2022-11-16</div>
+          <div class="time">{{obj2.registAreaMap6[0]?.date||2022-11-16}}</div>
           <div class="city">
             <myChinaMap :id="'chinaMap'" :sixArr="sixArr"></myChinaMap>
             <!-- <div class="city1">成都 1788</div>
