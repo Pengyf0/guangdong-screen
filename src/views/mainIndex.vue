@@ -1,7 +1,7 @@
 <template >
 	<div class="layout1">
 		<div class="mainIndex" ref="appGD" v-if="show">
-			<headerVue />
+			<headerVue @headinit = "getAlldata()"  />
 			<Content :obj1="gzRow1VO" :obj2="gzRow2VO" />
 			<Bottom :obj3="gzRow3VO" />
 			<div class="botBg"></div>
@@ -27,7 +27,6 @@ export default {
 			gzRow1VO: {},
 			gzRow2VO: {},
 			gzRow3VO: {},
-			obj: {},
 		};
 	},
 	// mounted() {
@@ -41,7 +40,6 @@ export default {
 			let { data, code } = await gangzhouScreen();
 			if (code === 200) {
 				let { gzRow1VO, gzRow2VO, gzRow3VO } = data;
-				this.obj = data;
 				this.gzRow1VO = gzRow1VO;
 				this.gzRow2VO = gzRow2VO;
 				this.gzRow3VO = gzRow3VO;

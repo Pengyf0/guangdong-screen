@@ -42,7 +42,10 @@ export default {
 		this.realTime = setInterval(() => {
 			this.getTime();
 			this.$store.commit("gzDap/changeCount");
-			if (this.count == 0 && this.min == 0) this.$store.commit("gzDap/hdCount");
+			if (this.count == 0 && this.min == 0){
+				this.$store.commit("gzDap/hdCount")
+				this.$emit('headinit')
+			} ;
 
 		}, 1000);
 	},
