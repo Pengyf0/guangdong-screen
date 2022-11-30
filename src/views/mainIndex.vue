@@ -1,6 +1,6 @@
 <template >
 	<div class="layout1">
-		<div class="mainIndex" ref="appGD" v-if="show">
+		<div class="mainIndex" ref="appGD" >
 			<headerVue @headinit = "getAlldata()"  />
 			<Content :obj1="gzRow1VO" :obj2="gzRow2VO" />
 			<Bottom :obj3="gzRow3VO" />
@@ -23,7 +23,6 @@ export default {
 	mixins: [drawMixin],
 	data() {
 		return {
-			show: false,
 			gzRow1VO: {},
 			gzRow2VO: {},
 			gzRow3VO: {},
@@ -44,7 +43,6 @@ export default {
 				this.gzRow2VO = gzRow2VO;
 				this.gzRow3VO = gzRow3VO;
 				console.log('初始所有值', gzRow1VO, gzRow2VO, gzRow3VO);
-				this.show = true
 			}
 		},
 	},
